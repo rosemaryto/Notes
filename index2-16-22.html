@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //basic functions: alert, confirm, prompt
+        //alert('Welcome to the class');
+        //confirm('Are you sure you want to continue?');
+        //prompt('Please enter a number between 1 & 10');
+
+        //error, warn - displays results with symbols
+        //console.error('Are you sure you want to continue?');
+        //console.warn('Are you sure you want to continue?');
+        //() collect/passing values into functions & perform expresssion evaluations
+        //statement-lines of code
+        /*expression-valid unit of code that resolves to a value
+        2 Types
+        -literal-simply have a value like 'string' or 1
+            literal expression types: numeric literal (3.9), string literal ('Hello'), boolean litearl (false), literal null value (null), object literal {x:1, y:2}, array literal [1,2,3], function literal function(x){return x*x;}
+        -complex/variable-assign a value to a variable
+            complex or variable expressions (combine expressions to create complex expressions using operators)
+        */
+    //Hungarian Notation = strFirstName
+    /*
+    variables-symbolic names for values
+    identifiers-names of variables 
+    var or let (mutable) 
+    const (immutable-will never change) 
+        const ex: const PI = 3.14159;
+    */
+
+    //VARIABLES
+    // let strFirstName = 'Rosemary', strLastName = 'To';
+    // console.log(strFirstName,strLastName);
+    // //datatype conversion can be performed ie
+    // String(strFirstName);
+
+    /*2 DATA TYPES:
+    -primitive (immutable): string, number, boolean, null, undefined
+    -object: object, date, math, string, Number, RegEx, Array
+    */
+
+    // let fName = 'ROSEMARY';
+    // fName = fName.toLocaleLowerCase();
+    // console.log(fName);
+
+    // // \n creates line break or \'\' display string inside ''
+    // let name = 'Rosemary\nTo. Her nickname is \'El Chingon\'';
+    // console.log(name);
+
+    //TEMPERATE LITERALS ``
+    // let name = 'Rosemary To'
+    // console.log(`Hello, my name is ${name}.`);
+
+    /*NUMBER DATA TYPE
+    -integers
+    -floating-point (decimals)
+    -NaN(not a number)-when math operation is performed on inappropriate data like string or undefined value
+    -NULL-has only 1 value of null, variable that contains null contains no valid number, string, boolean, array, object etc. you can erase contents of variable (w/o deleting variable) by assigning NULL
+    -undefined-when object property doesn't exist or variable has been declared, but never had value assigned to it
+    */
+
+    // //NAN
+    // let x = 5, y = undefined;
+    // console.log(x+y); //=NaN
+
+    //parseInt(12.342) = 12
+    //parsFloat(12.342) = 12.342
+    //parseInt('Zak') = NaN
+    
+    /* THIS CODE DOESN'T GIVE DESIRED RESULT
+    let x = Number(prompt('Enter 1st number'));
+    let y = Number(prompt('Enter 2nd number'));
+    let sum = x + y;
+
+    if (typeof sum == 'number') {
+        // console.log(parseInt(x) + parseInt(y)); //*prompt by itself returns strings
+        console.log(sum)
+    } else {
+        console.log('You didn\'t enter 2 numbers');
+    }
+    */
+
+
+    /*OPERATORS
+    -assignment
+        types: =(assign), +=(add & assign ie. let x = 5; x += 5; x=10), -=(subtract & assign), *=, /=
+    -arithmetic
+        types: +, -, *, /, % (modulus-gives remainder ie. let x=12 % 5; x=2 (remainder))
+    -comparison
+        types: ==, !=, >, <, >=, <=, === (equal value & type), !=== (not equal value & type)
+    */
+    // let x = 5;
+    // let y = '5';
+    // console.log(x === y); //=false
+
+    // let name = 'Rose'
+    // let yearsWork = 19
+    // if (name === 'Rose' && yearsWork >=20) {
+    //     console.log(`${name} has been working for a long time`);
+    // } else {
+    //     console.log(`${name} is not quite experienced`);
+    // }
+    /*
+    -logical
+        type: && (and), || (or)
+    -string
+    -concatenation
+        type: +
+    -unary
+        type: !(converts Boolean then negates it), ++(adds 1 to operand), --(decrements by 1 from operand), delete (deletes specific index of array or specific property of object), typeof, void(discards return value of expression)
+    */
+
+    //UNARY
+    // let x = 5;
+    // x++
+    // console.log(x); //= 6
+
+
+
+
+    </script>
+    <!--<script src="script2-16-22.js"></script>-->
+    <!-- <script src="script2-23-22.js"></script> -->
+    <!-- <script src="script3-2-22.js"></script> -->
+    <!-- <script type="module" src="script3-9-22.js" defer></script> DEFER-so we don't have to write script in the body -->
+    <!-- <script src="script3-16-22.js" defer></script> -->
+    <!-- <script src="script3-23-22.js" defer></script> -->
+    <script src="script4-6-22.js" defer></script>
+
+</head>
+<body>
+    <!--for lab 3-9-22-->
+    <!-- <input type="text" id="name" value="Rosemary To"><br>
+    <input type="text" id="address" value="123 Street"><br>
+    <input type="text" id="city" value="San Diego"><br>
+    <input type="text" id="state" value="CA"><br>
+    <input type="text" id="zip" value="92124"><br>
+    <input type="text" id="email" value="rto@gmail.com"> -->
+
+
+
+    <!--for lab 3-16-22-->
+
+    <!--BUTTON old school-->
+    <!-- <button onclick="writeMessage('HelloWorld')">Click Me</button>
+    <button id="clickme">Click Me Too</button> -->
+
+    <!--EVENT BUBBLING-->
+    <!-- <ul id="links">
+        <li><a href="#">Item 1</a></li>
+        <li><a href="#">Item 2</a></li>
+        <li><a href="#">Item 3</a></li>
+        <li><a href="#">Item 4</a></li>
+        <li><a href="#">Item 5</a></li>
+    </ul> -->
+    
+    <!-- <h1>The Future Value Application</h1>
+    Investment:<br>
+    $ <input type="text" id="investment"><br>
+    Interest Rate:<br>
+    <input type="text" id="rate"><br>
+    Years:<br>
+    <input type="text" id="years"><br>
+    <button id="calculate">Calculate</button><br>
+    <output id="output"></output> -->
+
+
+    <!--LAB 3-23-2022-->
+    <!-- <button id="btnGetLocation">Get Location</button>
+    <script>
+        //GET USER LOCATION
+        document.getElementById('btnGetLocation').addEventListener('click', () => {
+        window.navigator.geolocation.getCurrentPosition(success, error)
+        })
+            function success(position) {
+                window.alert(
+                'Latitude: ' + position.coords.latitude + '\n' +
+                'Longitude: ' + position.coords.longitude + '\n' +
+                'Accuracy: ' + position.coords.accuracy);
+            }
+            function error(error) {  
+            switch(error.code) {  
+                case error.PERMISSION_DENIED: alert('Not sharing your location.');  
+                break;  
+                case error.POSITION_UNAVAILABLE: alert('Couldn’t detect position.'); 
+                break;  
+                case error.TIMEOUT: alert('Position retrieval timed out.');
+                break;  
+                default: alert('Unknown error.');  
+                break;  
+                }  
+            }
+    </script> -->
+
+    <!-- LAB 4-6-2022 -->
+    <p class="p1" id="hello">hello world</p>
+    <p class="p2">hello world again</p>
+
+    <ul id="items">
+        <li class="item"><a href="#">Item 1</a></li>
+        <li class="item">Item 2</li>
+        <li class="item">Item 3</li>
+        <li class="item">Item 4</li>
+        <li class="item">Item 5</li>
+        <li>Item 6</li>
+        <li>Item 7</li>
+        <li>Item 8</li>
+        <li>Item 9</li>
+        <li>Item 10</li>
+    </ul>
+
+    <!-- LAB10 -->
+    <header id="main-header" class="bg-dark text-white p-4 mb-3">
+        <div class="container">
+          <div class="row">      
+            <div class="col-md-12">      
+              <h1 class="header-title">The Task List App</h1>      
+            </div>      
+          </div>      
+        </div>      
+      </header>
+             
+      
+      <div class="container">      
+        <div id="main" class="card card-body">      
+          <h2 class="title">Add Task</h2>      
+          <form action="" id="addForm" class="form-inline"></form>      
+        </div>      
+      </div>
+    
+</body>
+</html>
