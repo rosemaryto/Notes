@@ -68,7 +68,7 @@ ADDING/REMOVING ITEMS
 
 
 //ADDING/REMOVING ITEMS
-let names = ['zac','fred','sally']
+// let names = ['zac','fred','sally']
 
 //PUSH() : adds element
 /* names = names.push('jessica','john')
@@ -184,6 +184,41 @@ filter-returns new array containing items for which call back is returned true, 
 // console.log(x) //returns 326
 
 //SPREAD OPERATOR-allows an iterable such as array to be expanded in places where 0 or more arguments are expected
-const sum = (x,y,z) => {return x + y + z}
-const numbers = [1,2,3]
-console.log(sum(...numbers)) //returns 6
+// const sum = (x,y,z) => {return x + y + z}
+// const numbers = [1,2,3]
+// console.log(sum(...numbers)) //returns 6
+
+//2-DIMENSIONAL ARRAY - array nested in array
+// let employees = [['Sally',10], ['Jim',5], ['Zak',7], ['Judy',15]]
+// for (let i = 0; i < employees.length; i++) {
+//   console.log(`Name: ${employees[i][0]} Services: ${employees[i][1]} years\n`)
+// }
+//OR
+// employees.forEach(employee => {
+//   console.log(`Name: ${employee[0]} Services: ${employee[1]} years\n`)
+// })
+
+/*WEB STORAGE - native way of persisting data (persists data on user's system)
+-handled by using: hidden fields, cookies, Local Storage (retained indefinitely) & Session Storage (lost once broweser closed)
+-localStorage.saveItem('itemname', value) //saves data in the item
+-localStorage.getItem('itename') //gets data in item
+-localStorage.removeItem('itemname') //removes item
+-localStorage.clear() //removes all items
+//SHORTCUT TO SAVE ITEM
+-localStorage.itemname //saves or gests data in item
+-sessionStorage.itemame //saves or gests data in item
+*/
+
+//CAN'T STORE ARRAY DIRECTLY INTO LOCAL STORAGE
+let employees = [['Sally',10], ['Jim',5], ['Zak',7], ['Judy',15]]
+
+// localStorage.setItem('employees', employees) //becomes string when stored
+
+//CORRECT WAY TO STORE ARRAY
+localStorage.setItem('employees', JSON.stringify(employees)) 
+
+//RETRIEVE ARRAY FROM STORAGE
+console.log(JSON.parse(localStorage.getItem('employees')));
+
+
+
