@@ -94,16 +94,12 @@ console.log(names) //returns 5
 
  
 //SEARCHING/REVERSING/SORTING
-//ind
-//exOf - searches array for element & returns ind
-//ex of first match or -1 if not found (best use when you have to build search)
+//indexOf - searches array for element & returns index of first match or -1 if not found (best use when you have to build search)
 /* console.log(names.ind
   //exOf('fred'))  *///returns 1
 
 
-//lastInd
-//exOf - finds last instance of same item (for things that 
-//exist more than once)
+//lastIndexOf - finds last instance of same item (for things that exist more than once)
 //reverse - reverses order (first is last, last is first...)
 //sort - sorts array
 
@@ -210,15 +206,17 @@ filter-returns new array containing items for which call back is returned true, 
 */
 
 //CAN'T STORE ARRAY DIRECTLY INTO LOCAL STORAGE
-let employees = [['Sally',10], ['Jim',5], ['Zak',7], ['Judy',15]]
+// let employees = [['Sally',10], ['Jim',5], ['Zak',7], ['Judy',15]]
 
 // localStorage.setItem('employees', employees) //becomes string when stored
 
 //CORRECT WAY TO STORE ARRAY
-localStorage.setItem('employees', JSON.stringify(employees)) 
+// localStorage.setItem('employees', JSON.stringify(employees)) 
 
 //RETRIEVE ARRAY FROM STORAGE
-console.log(JSON.parse(localStorage.getItem('employees')));
+// console.log(JSON.parse(localStorage.getItem('employees')));
 
-
-
+let employees = [["Jessica",10], ["Zak",9], ["Fred",15], ["Mike",5]];
+for (let i = 1; i < employees.length; i++) {
+     console.log(employees[i][0] + " " + employees[i][1]);
+}
