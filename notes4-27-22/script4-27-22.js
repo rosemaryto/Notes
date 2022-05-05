@@ -16,6 +16,7 @@ object-used to explixitly tell interpreter that you want to create new strong ob
     -modifier (g-searches entire string & not just 1st occurence)
 -replace(): searches string for specified value/reg expression & returns new string where specified values are replaced
 -search(): searches string for specified value/reg expression & returns position of match
+    -use search() over indexOf() when you require use of reg ex
 */
 
 //charCodeAt()
