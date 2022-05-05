@@ -49,6 +49,8 @@ let car = 'My daily driver is a Chevy Camaro. I also own a Chevy Suburban'
 console.log(car.search(/Chevy/g))
 //returns 21
 
+//start: 34:13
+
 
 
 
