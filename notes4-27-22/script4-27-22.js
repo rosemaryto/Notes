@@ -45,12 +45,107 @@ object-used to explixitly tell interpreter that you want to create new strong ob
 // alert(`${txtApp.replace('the lazy dog', urName)}`)
 
 //search()
-let car = 'My daily driver is a Chevy Camaro. I also own a Chevy Suburban'
-console.log(car.search(/Chevy/g))
+// let car = 'My daily driver is a Chevy Camaro. I also own a Chevy Suburban'
+// console.log(car.search(/Chevy/g))
 //returns 21
 
-//start: 34:13
+//slice, substr, substring - all used to extract parts of a string & return extracted part into new string.
+let car = 'Chevy Camaro'
+console.log(car.slice(0, 5)) //returns Chevy
 
+let car1 = 'My daily driver is a Chevy Camaro'
+console.log(car1.split(' ')) //returns array ['My', 'daily', 'driver', 'is', 'a', 'Chevy', 'Camaro']
+
+//toLowerCase or toUpperCase
+console.log(car.toLocaleLowerCase()) //chevy camaro
+
+//TRIM removes white spaces from both ends of string
+let car3 = '           Chevy Camarao    '
+console.log(car3.trim())
+
+/*REGULAR EXPRESSIONS - object that describes patter of characters & used to perform pattern matching, search & replace functions on text
+-great for credit card,social security, dob validation
+MODIFIER - used to perform case-sensitive & global searches
+    ex: i (perform case-insensitive matching)
+        g (perform global match (finds all matches instead of stopping at first match))
+        m (perform multiline matching-continues onto next paragraph)
+*/
+let car4 = 'Let\'s turn the Honda on and go for a ride soon!'
+console.log(car4.match(/on/g)) //returns array (on,on,on)
+
+ /*   Brackets - used to find range of characters
+        [abc] find any character between brackets
+        [^abc] find any character NOT between brackets
+        [0-9] find any digit between brackets
+        [^0-9] find any digit NOT btwn 
+        (x|y) find any alternatives specified ie. x or y
+*/
+let car5 = 'Let\'s turn the Honda on and go for a ride soon!'
+console.log(car5.match(/[^on]/g)) //returns array of all letters NOT 'o' or 'n'
+
+/*
+METACHARACTERS - are characters w/ special meaning
+    .   find single character, except newline or line terminator
+    \w  find word character
+    \W  find non-word character
+    \d  find digit
+    \D  find non-digit character
+    \s  find whitespace character
+    \S  find non-whitespace char
+    \b  find match at beginning/end of word
+    \B  find match not at beginning/end of word
+    \0  find null character
+    \n  find new line break
+    \f  find form feed char
+    \r  find carriage return char
+    \t  tab char
+    \v  vertical tab char
+    \xxx    char specified by hexadecimal number dd
+    \uxxxx  unicode char specified by hexadecimal number xxxx
+*/
+
+let car6 = 'Let\'s turn the Honda on and go for a ride soon!'
+console.log(car6.match(/\W/g)) //return chars that are not words
+
+let zip = 'Your zip code is 92115.'
+console.log(zip.match(/\d/g)) //return 9,2,1,1,5
+
+/*
+QUANTIFIERS
+n+  matches any string that contains at least one n
+n*  zero or more ocurrences of n
+n?  zero or one occurences of n
+n{X}    contains a sequence of X n's
+n{X,Y}  contains a sequence of X to Y n's
+n{X, }  contains a sequence of at least X n's
+n$  string with n at end of it
+^n  string with n at beginning of it
+?=n string that is followed by specific string n
+*/
+let zip1 = 'Your zip code is 92115.'
+console.log(zip1.match(/\d{5}/g)) //return 92115 (all digits that match patter of 5 numbers)
+
+let zip2 = 'Your zip code is 92115-1115'
+console.log(zip2.match(/\d{5}(-\d{4})?/)) //return 92115-1115 & -1115
+
+/*REGEX OBJECT
+supports following members:
+-Properties
+    global
+    ingoreCase
+    lastIndex
+    multiline
+    source
+-Methods
+    exec()
+    test()
+    toString()
+*/
+
+
+let zip3 = 'Your zip code is 92115-1115'
+let pattern = new RegExp('92115')
+console.log(pattern.exec(zip).toString()) //returns 92115
 
 
 
