@@ -148,7 +148,75 @@ let pattern = new RegExp('92115')
 console.log(pattern.exec(zip).toString()) //returns 92115
 
 
+/*WORKING WITH NUMBERS/MATH
+-numeric literal-constant, fixed sequence of numbers
+-primitive numeric value-like string, number, boolean, undefined, null, everything else is an object
+-number object-number object used to explicitly tell interpreter you want new # object
+
+COMMON METHODS (using MATH.)
+    -PI
+    -abs(x) -absolute value of x
+    -ceil(x) -rounds up always
+    -floor(x) -rouds down always
+    -max(x,y,z) -returns highest number
+    -min(x,y,z) -returns lowest number
+    -pow(x,y)
+    -random() -returns random # between 0 and 1
+    -round(x) -rounds up or down
+    -sqrt(x)
+*/
+
+const x = Math.PI
+console.log(x)
+
+let y = -10;
+console.log(Math.abs(y)) //returns 10
+
+let z = .6434;
+console.log(Math.floor(z)) //returns 0
+
+console.log(Math.max(10,20,30,40,50)) //returns 50
+
+console.log(Math.pow(4,4)) //returns 256
+
+console.log(Math.sqrt(9)) //returns 3
 
 
+/*DATES 
+-create using new Date()
+    ex: let d = new Date()
+              = new Date (milliseconds)
+              = new Date (dateString)
+              = new Date (year, month, day, hours, minutes, seconds, milliseconds)
+-COMMON METHODS
+    -getDate()
+    -getDay()
+    -getFullYear()
+    -getHours()
+*/
 
+//returns day of month (from 1-31)
+let d = new Date()
+console.log(d.getDate()) //returns 16 bc today = 5/16/22
+
+let e = new Date()
+console.log(e.getFullYear()) //returns 2022 bc today = 5/16/22
+
+//returns hour (0-23)
+let f = new Date()
+console.log(f.getHours()) //returns 6 bc now is 6am
+
+//returns minutes (0-59)
+let g = new Date()
+console.log(g.getMinutes()) //returns 28 bc now is 6:28am
+
+//returns month (0-11) - 0 January
+let h = new Date()
+console.log(h.getMonth()) //returns 4 bc now is May
+
+//converts date portion of Date object into string
+let i = new Date()
+console.log(i.toDateString()) //returns Mon May 16 2022 bc today = 5/16/22
+
+//start 1:45
 
