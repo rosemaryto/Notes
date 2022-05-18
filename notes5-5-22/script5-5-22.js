@@ -142,8 +142,10 @@ xhr.onerror = (e) => {console.error(e.message)}
 -Many JS APIs will return Promise objects. The Fetch API is one
 -Promise objects have special syntax that handle the fulfilled value or reason for rejection
 -.then() = fulfilled or rejected, .catch() = handle errors
+-makes asynchronous code more readable
 */
 
+/*
 //CREATING PROMISE
 const myFetch = (url) => {
     return new Promise((resolve, reject) => {
@@ -181,4 +183,55 @@ const myFetch = (url) => {
 myFetch('https://jsonplaceholder.typicode.com/users/')
     .then((users) => console.log(users))
     .catch((e) => console.log(e))
-//start: 46:39
+*/
+
+/****
+FETCH API - basically a promise or XHR object returned as object
+-provides methods & objects for making Ajax requests. 
+-main method is .fetch()
+-.fetch() accepts URL for GET request which retunrs a promise that resolves when the status headrs of HTTP response are received:
+    fetch('https://jsonplaceholder.typicode.com/users/')
+    -at this point, data of HTTP response sin't received yet. So promise is resolved bc it has returned a Response object, it isn't fulfilled because requested data isn't received yet.
+    -first .then() gets response as JSON
+    -second .then() method accepts callback that executes when promise from json() method resolves. This callback accepts a JS object named users. The users object is iterated through an data is displayed in browser
+    
+
+
+fetch('https://jsonplaceholder.typicode.com/users/')
+    //RESOLVE PARAMETERS
+    //first .then() gets response as JSON
+    .then( response => response.json())
+    //second .then() gets data, iterates through it and display
+    .then( users => {
+        for (let user of users) {
+            document.body.innerHTML += `${user.name}<br>${user.email}<br>
+            ${user.phone}<br>${user.website}<br><br>`
+        }
+    })
+    //REJECT PARAMETERS
+    .catch(e => console.log(e.message))
+****/
+
+/*****
+ASYNC/AWAIT - looks more like synchronous code making promises easier 
+-How to create (async keyword before function):
+    async function fetchUsers() {
+
+    }
+    fetchUsers()
+-await keyword tells JS to wait until a promise is settled and then return its result. It can only be used in asynchronous functions. This ex defines asynchronous fuction named fetchUsers() that uses fetch() method to get a collection of users from web API. await keyword is used prior to using .fetch() as well as collecting response from response.json(). This makes this code look like "normal" synchronous code because it doesnt look like call back function
+
+****xhr, promises, fetch api, async
+****fetch object returns promise, so we have to use await keyword and everything is an asynchronous function
+****/
+
+async function fetchUsers() {
+    const response = await fetch('https://jsonplaceholder.typicode.com/users/')
+    const users = await response.json()
+    for (let user of users) {
+        document.body.innerHTML += `${user.name}<br>${user.email}<br><br>`
+    }
+}
+fetchUsers()
+
+//start: 1:40
