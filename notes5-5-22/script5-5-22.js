@@ -221,9 +221,8 @@ ASYNC/AWAIT - looks more like synchronous code making promises easier
     fetchUsers()
 -await keyword tells JS to wait until a promise is settled and then return its result. It can only be used in asynchronous functions. This ex defines asynchronous fuction named fetchUsers() that uses fetch() method to get a collection of users from web API. await keyword is used prior to using .fetch() as well as collecting response from response.json(). This makes this code look like "normal" synchronous code because it doesnt look like call back function
 
-****xhr, promises, fetch api, async
-****fetch object returns promise, so we have to use await keyword and everything is an asynchronous function
-****/
+
+
 
 async function fetchUsers() {
     const response = await fetch('https://jsonplaceholder.typicode.com/users/')
@@ -234,4 +233,11 @@ async function fetchUsers() {
 }
 fetchUsers()
 
-//start: 1:40
+
+
+****xhr, promises, fetch api, async
+****fetch object returns promise, so we have to use await keyword and everything is an asynchronous function
+****CORS (cross origin resource sharing)
+****/
+
+//start: 1:47
