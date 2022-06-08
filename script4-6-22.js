@@ -110,29 +110,29 @@ DOM SCRIPTING: creating, modifying, deleting elements
 
 //CREATING & ADDING DOM ELEMENTS
 //create element
-let li = document.createElement('li')
+// let li = document.createElement('li')
 
-//add class name & id
-li.id = 'newItem'
-li.className = 'list-group-item'
+// //add class name & id
+// li.id = 'newItem'
+// li.className = 'list-group-item'
 
-//option2 to set class attribute
-/*  li.setAttribute('class', 'list-group-item') */
+// //option2 to set class attribute
+// /*  li.setAttribute('class', 'list-group-item') */
 
-//create text node
-let text = document.createTextNode('Weed The Garden')
+// //create text node
+// let text = document.createTextNode('Weed The Garden')
 
-//add text node to element created
-li.appendChild(text)
+// //add text node to element created
+// li.appendChild(text)
 
-//get the ul from the dom
-let list = document.getElementById('items')
+// //get the ul from the dom
+// let list = document.getElementById('items')
 
-//attach text & element to the list
-list.appendChild(li)//INSERT AT END
+// //attach text & element to the list
+// list.appendChild(li)//INSERT AT END
 
-//insert text & element anywwhere in the list (2nd position)
-list.insertBefore(li, list.children[1])
+// //insert text & element anywwhere in the list (2nd position)
+// list.insertBefore(li, list.children[1])
 
 
 //insert at beginning
@@ -155,10 +155,10 @@ innerHTML: gets or sets all text, including html tags contained by elemement
 
 //ATTRIBUTE METHODS - to get attributes: see it, remove it, setting particular value
 //GET ELEMENT BY ATTRIBUTE --> Class: card card-body
-let div = document.getElementById('main')
-if (div.hasAttribute('class')) {
-                console.log(`Class: ${div.getAttribute('class')}`)
-}
+// let div = document.getElementById('main')
+// if (div.hasAttribute('class')) {
+//                 console.log(`Class: ${div.getAttribute('class')}`)
+// }
 
 //REMOVE ID ATTRIBUTE
 /* div.removeAttribute('id') */
@@ -166,7 +166,7 @@ if (div.hasAttribute('class')) {
 
 
 //GET ID OF DIV USING DOM LEVEL 3 SPECIFICATION
-console.log(div.id)
+// console.log(div.id)
  
 
 /*

@@ -240,4 +240,20 @@ fetchUsers()
 ****CORS (cross origin resource sharing)
 ****/
 
-//start: 1:47
+fetch('https://jsonplaceholder.typicode.com/todos/1')
+    .then(response => response.json())
+    .then(json => console.log(json))
+
+    fetch('https://jsonplaceholder.typicode.com/users/')
+    //RESOLVE PARAMETERS
+    //first .then() gets response as JSON
+    .then( response => response.json())
+    //second .then() gets data, iterates through it and display
+    .then( users => {
+        for (let user of users) {
+            document.body.innerHTML += `${user.name}<br>${user.email}<br>
+            ${user.phone}<br>${user.website}<br><br>`
+        }
+    })
+    //REJECT PARAMETERS
+    .catch(e => console.log(e.message))

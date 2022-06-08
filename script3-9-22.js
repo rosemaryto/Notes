@@ -224,56 +224,56 @@ ex.    let make = 'Lexus'
 */
 
 //USING MODULES
-// import * as calc from './script3-9-22MOD.js'
-// console.log(calc.add(5,5))
-// console.log(calc.sub(5,5))
+import * as calc from './script3-9-22MOD.js'
+console.log(calc.add(5,5))
+console.log(calc.sub(5,5))
 //or
 // import { add,sub } from './script3-9-22MOD.js'
-// console.log(calc.add(4,5))
-// console.log(calc.sub(5,5))
+console.log(calc.add(4,5))
+console.log(calc.sub(5,5))
 //my practice
-// import * as word from './script3-9-22MOD.js'
-// console.log(word.displayword('green'))
+import * as word from './script3-9-22MOD.js'
+console.log(word.displayword('green'))
 
 //LAB 7
-function displayTitle() {
-    alert('Welcome to guess the Number Game!')
-}
+// function displayTitle() {
+//     alert('Welcome to guess the Number Game!')
+// }
 
 
-function displayGame() {
-    let number = Math.floor(Math.random() * 10 + 1) //will always be 1 - 10 (Math.floor = always down, Math.ceil = always up)
-    let count = 1
-    let guess
+// function displayGame() {
+//     let number = Math.floor(Math.random() * 10 + 1) //will always be 1 - 10 (Math.floor = always down, Math.ceil = always up)
+//     let count = 1
+//     let guess
 
-    alert('I\'m guessing a number between 1 and 10')
+//     alert('I\'m guessing a number between 1 and 10')
 
-    while(true) {
-        guess = Number(prompt('Enter your guess'))
-        if (number > guess) {
-            alert('Too low')
-            count++ //keeping track of guesses
-        } else if (number < guess) {
-            alert('Too high')
-            count++
-        } else if (number === guess) {
-            alert(`You guessed right! The number is ${number}. It took you ${count} tries`)
-            return //breaks out of while loop
-        }     
-    }
-}
+//     while(true) {
+//         guess = Number(prompt('Enter your guess'))
+//         if (number > guess) {
+//             alert('Too low')
+//             count++ //keeping track of guesses
+//         } else if (number < guess) {
+//             alert('Too high')
+//             count++
+//         } else if (number === guess) {
+//             alert(`You guessed right! The number is ${number}. It took you ${count} tries`)
+//             return //breaks out of while loop
+//         }     
+//     }
+// }
 
 
 
-function main() {
-    displayTitle()
-    let playAgain = 'y'
-    while (playAgain === 'y') {
-        displayGame()
-        playAgain = prompt('Do you want to play again? (y/n)')
-    }
-    alert('Thank you for playing the game!')//if they choose 'n'
-}
-main()
+// function main() {
+//     displayTitle()
+//     let playAgain = 'y'
+//     while (playAgain === 'y') {
+//         displayGame()
+//         playAgain = prompt('Do you want to play again? (y/n)')
+//     }
+//     alert('Thank you for playing the game!')//if they choose 'n'
+// }
+// main()
 
 
